@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\HostApp.Shared\HostApp.Shared.csproj">
+          <Private>false</Private>
+          <ExcludeAssets>runtime</ExcludeAssets>
+        </ProjectReference>
+
+        <!-- <PackageReference Include="HostApp.Shared" Version="1.0.0">
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference> -->
+    </ItemGroup>
+
+</Project>

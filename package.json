@@ -1,0 +1,25 @@
+{
+  "name": "aspnetcore-api-plugin-sample",
+  "version": "1.0.0",
+  "description": "Sample modular plugin based application\r See: https://learn.microsoft.com/en-us/dotnet/core/tutorials/creating-app-with-plugin-support",
+  "main": "index.js",
+  "scripts": {
+    "build:clean": "npx rimraf dist/host/* && npx rimraf dist/plugins/*",
+    "build:host": "cd HostApp && dotnet publish -c release -o ../dist/host",
+    "build:plugins:weather": "cd Plugins/App.Plugins.WeatherService && dotnet publish -c release -o ../../dist/plugins/App.Plugins.WeatherService",
+    "build:plugins:swagger": "cd Plugins/App.Plugins.Swagger && dotnet publish -c release -o ../../dist/plugins/App.Plugins.Swagger",
+    "build:plugins": "npm run build:plugins:weather && npm run  build:plugins:swagger",
+    "build": "npm run build:clean && npm run build:host && npm run build:plugins"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattjcowan/aspnetcore-api-plugin-sample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattjcowan/aspnetcore-api-plugin-sample/issues"
+  },
+  "homepage": "https://github.com/mattjcowan/aspnetcore-api-plugin-sample#readme"
+}
